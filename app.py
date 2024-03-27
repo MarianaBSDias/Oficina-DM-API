@@ -13,8 +13,10 @@ pipeline = joblib.load('breast_pipeline.pkl')
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
+
     # Ler o arquivo
     df = pd.read_csv(file.file, index_col = 0)
+
     # Fazer a previsão
     pred = pipeline.predict(df)
     return {"prediction": pred.tolist()}
