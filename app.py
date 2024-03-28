@@ -13,6 +13,15 @@ pipeline = joblib.load('breast_pipeline.pkl')
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
+    """
+    Endppoint para inferência de tumores de mama.
+
+    :param file: Arquivo CSV com os dados a serem inferidos
+
+    :return dict: Dicionário com as previsões
+    """
+    :param file:
+    :return:
 
     # Ler o arquivo
     df = pd.read_csv(file.file, index_col = 0)
