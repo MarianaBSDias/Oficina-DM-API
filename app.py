@@ -19,9 +19,10 @@ async def predict(file: UploadFile = File(...)):
     :param file: Arquivo CSV com os dados a serem inferidos
 
     :return dict: Dicionário com as previsões
-    """
+
     :param file:
     :return:
+     """
 
     # Ler o arquivo
     df = pd.read_csv(file.file, index_col = 0)
